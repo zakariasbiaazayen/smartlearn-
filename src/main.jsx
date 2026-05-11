@@ -2,8 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './styles.css'
-import App from './App.jsx'
-import User from './User.jsx'
+import App from './pages/upload.jsx'
+import User from './pages/result.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

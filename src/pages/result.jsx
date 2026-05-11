@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Aside from "../components/Aside.jsx";
 const SUMMARY_POINTS = [
   "Photosynthesis is the process by which plants convert light energy into chemical energy stored as glucose.",
   "The process occurs in two main stages: the light-dependent reactions (in the thylakoid membranes) and the Calvin cycle (in the stroma).",
@@ -73,34 +73,6 @@ function SkeletonCard({ lines = 3 }) {
   );
 }
 
-/* ─── Navbar ─── */
-function Navbar({ onUpload }) {
-  return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center shadow-sm">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 10L5 4L8 8L10 5.5L12 10H2Z" fill="white" />
-              <circle cx="10.5" cy="3.5" r="1.5" fill="white" opacity="0.8" />
-            </svg>
-          </div>
-          <span className="font-semibold text-gray-900 tracking-tight text-[15px]">SmartLearn AI</span>
-        </div>
-        <button
-          onClick={onUpload}
-          className="flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 border border-gray-200 px-3.5 py-1.5 rounded-lg transition-all duration-150"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 9.5V2.5M4 5L7 2L10 5" />
-            <path d="M2 11.5h10" />
-          </svg>
-          Upload New Notes
-        </button>
-      </div>
-    </nav>
-  );
-}
 
 /* ─── Summary Tab ─── */
 function SummaryTab() {
@@ -525,17 +497,15 @@ export default function SmartLearnResults() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div className="min-h-screen bg-gray-50 font-sans flex ">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap');
         .font-sans { font-family: 'DM Sans', sans-serif; }
         .font-display { font-family: 'DM Serif Display', serif; }
       `}</style>
-
-      <Navbar onUpload={() => alert("Navigate to upload page")} />
+      <Aside />
 
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-
         {/* Page Header */}
         <div className="mb-8">
           <div className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-full mb-4">

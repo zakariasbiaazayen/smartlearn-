@@ -278,58 +278,7 @@ function IconStar() {
   );
 }
  
-// ─── Navbar ───────────────────────────────────────────────────────────────────
- 
-function Navbar() {
-  return (
-    <nav style={{
-      position: "sticky", top: 0, zIndex: 100,
-      background: "rgba(248,250,252,0.85)",
-      backdropFilter: "blur(16px)",
-      borderBottom: "1px solid rgba(226,232,240,0.8)",
-    }}>
-      <div style={{
-        maxWidth: 1100, margin: "0 auto",
-        padding: "0 24px",
-        height: 60,
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-      }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <div style={{
-            width: 32, height: 32, borderRadius: 10,
-            background: "linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}>
-            <IconBrain />
-          </div>
-          <span className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "#0f172a", letterSpacing: "-0.03em" }}>
-            SmartLearn<span style={{ color: "#2563eb" }}> AI</span>
-          </span>
-        </div>
- 
-        <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-          <a href="#how" className="navbar-link">How it works</a>
-          <a href="#demo" className="navbar-link">Demo</a>
-          <button style={{
-            marginLeft: 8,
-            background: "#0f172a", color: "#ffffff",
-            border: "none", borderRadius: 10,
-            padding: "8px 18px",
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: 14, fontWeight: 500,
-            cursor: "pointer",
-            transition: "all 0.15s ease",
-          }}
-          onMouseEnter={e => e.currentTarget.style.background = "#1e293b"}
-          onMouseLeave={e => e.currentTarget.style.background = "#0f172a"}
-          >
-            Get started
-          </button>
-        </div>
-      </div>
-    </nav>
-  );
-}
+
  
 // ─── Hero ─────────────────────────────────────────────────────────────────────
  
@@ -743,7 +692,6 @@ export default function App() {
     <>
       <style>{styles}</style>
       <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-        <Navbar />
         <main style={{ flex: 1 }}>
           <Hero />
           <div style={{ padding: "0 24px" }}>
